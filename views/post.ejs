@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs"); %>
+
+<div class="post">
+    <h1>Create a Post</h1>
+    
+    <form class="post-form" action="/submit" method="POST">
+        
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" name="title" id="floatingInput" placeholder="Title" required>
+            <label for="floatingInput">Title</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" name="author" id="author" placeholder="Author Name" required>
+            <label for="floatingInput">Author Name</label>
+        </div>
+
+        <textarea class="form-control" type="text" name="content-form" id="content-form" placeholder="Enter your content" rows="17" cols="30" required></textarea>
+        <button type="submit" class="post-btn btn btn-success">Post</button>
+    </form>
+    <img class="typewriter" src="images/typewriter.jpg" alt="">
+</div>
+
+
+<%- include("partials/footer.ejs"); %>

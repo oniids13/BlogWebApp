@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+
+<div class="cover">
+    <h1>Welcome to Blog World!</h1>
+    <p>"Your Daily Dose of Everything."</p>
+</div>
+
+<div class="content">
+    <h2>Blog Posts</h2>
+
+    <% if (locals.content) { %>
+        <% content.forEach(post => { %>
+            <div class="postUser">
+                <h3><%= post.title %></h3>
+                <h5><%= post.author %></h5>
+                <span><%=post.date %></span>
+                <p><%=post.content %></p>
+                <form action="/edit" method="GET">
+                    <input type="hidden" name="edit" value="<%=post.title%>">
+                    <button type="submit" class="user-btn btn btn-warning">Edit</button>
+                </form>
+                <form action="/delete" method="GET">
+                    <input type="hidden" name="delete" value="<%=post.title%>">
+                    <button type="submit" class="user-btn btn btn-danger">Delete</button>
+                </form>
+            </div>
+        <% }); %>
+    <%} %>
+</div>
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>

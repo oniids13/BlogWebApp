@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+<div class="edit-post">
+    <h1>Edit Post</h1>
+    <form class="edit-form" action="/edit-submit" method="POST">
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" name="title" id="floatingInput" value="<%= data.title %>">
+            <label for="floatingInput">Title</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" name="author" id="floatingInput" value="<%= data.author %>">
+            <label for="floatingInput">Author Name</label>
+        </div>
+
+        <textarea class="form-control"  type="text" name="content-form" id="content-form" rows="19" cols="30"><%= data.content %></textarea>
+        <input type="hidden" name="to-edit" id="to-edit" value="<%= data.title %>">
+        <button type="submit" class="post-btn btn btn-success">Edit Post</button>
+    </form>
+    <img class="edit-pic" src="/images/editpic.jpg" alt="">
+</div>
+
+
+
+
+<%- include("partials/footer.ejs") %>
